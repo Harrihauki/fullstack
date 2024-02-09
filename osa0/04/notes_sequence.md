@@ -3,7 +3,7 @@ sequenceDiagram
   participant browser
   participant server
 
-  browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note : {"note" : "..."}
+  browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note : note : "..."
   activate server
   Note left of server: The server saves the note
   server-->>browser: Redirect to /exampleapp/notes
@@ -28,7 +28,7 @@ sequenceDiagram
 
   browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
   activate server
-  server-->>browser: JSON file of elements of form { "content": "...", "date": "y-m-d" }
+  server-->>browser: JSON file of elements of form {"content": "...", "date": "..."}
   deactivate server
 
   Note right of browser: Function in JS file is run to render the notes from the JSON file
